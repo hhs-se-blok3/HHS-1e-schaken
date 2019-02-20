@@ -10,4 +10,8 @@ public class Veld
     }
 
 
+    public boolean equals(Veld that)
+    {
+        return this.rij == that.rij && this.kolom == that.kolom;
+    }
 }

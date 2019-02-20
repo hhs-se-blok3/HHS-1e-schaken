@@ -8,4 +8,16 @@ public class Toren
         this.van = van;
         this.staatOp = staatOp;
     }
+
+    public void afdrukken()
+    {
+        this.van.afdrukken('R', 'r');
+    }
+
+    public Veld getVeld()
+    {
+        return this.staatOp;
+    }
+
+
 }

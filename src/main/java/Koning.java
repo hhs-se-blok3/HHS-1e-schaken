@@ -8,4 +8,14 @@ public class Koning
         this.van = van;
         this.staatOp = staatOp;
     }
+
+    public void afdrukken()
+    {
+      this.van.afdrukken('K', 'k');
+    }
+
+    public Veld getVeld()
+    {
+        return this.staatOp;
+    }
 }
