@@ -1,4 +1,5 @@
-public class Speler {
+public class Speler
+{
     private int kleur;
 
     public Speler(int kleur)

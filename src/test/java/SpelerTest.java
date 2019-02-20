@@ -1,9 +1,11 @@
 import org.junit.Test;
 
-public class SpelerTest {
+public class SpelerTest
+{
 
     @Test
-    public void test() {
+    public void test()
+    {
         new Speler(1);
     }
 

@@ -1,4 +1,5 @@
-public class Toren {
+public class Toren
+{
     private Speler van;
     private Veld staatOp;
 
