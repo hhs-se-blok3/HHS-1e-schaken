@@ -1,19 +1,18 @@
 public class Speler
 {
-    private int kleur;
+    private String kleur;
 
-    public Speler(int kleur)
+    public Speler(String kleur)
     {
         this.kleur = kleur;
     }
 
     public void afdrukken(char symboolWit, char symboolZwart)
     {
-        if (this.kleur == 0)
+        if (this.kleur == "WIT")
         {
             System.out.print(symboolWit);
-        }
-        else
+        } else
         {
             System.out.print(symboolZwart);
         }

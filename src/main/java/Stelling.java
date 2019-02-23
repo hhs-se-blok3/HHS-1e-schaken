@@ -3,24 +3,17 @@ import java.util.ArrayList;
 public class Stelling
 {
     private Speler aanDeBeurt;
-    private ArrayList<Koning> koningen;
-    private ArrayList<Toren> torens;
+    private ArrayList<Stuk> stukken;
 
     public Stelling(Speler aanDeBeurt)
     {
         this.aanDeBeurt = aanDeBeurt;
-        this.koningen = new ArrayList<>();
-        this.torens = new ArrayList<>();
+        this.stukken = new ArrayList<>();
     }
 
-    public void addKoning(Koning koning)
+    public void addStuk(Stuk stuk)
     {
-        this.koningen.add(koning);
-    }
-
-    public void addToren(Toren toren)
-    {
-        this.torens.add(toren);
+        this.stukken.add(stuk);
     }
 
     public void afdrukken()
@@ -34,60 +27,34 @@ public class Stelling
         System.out.println();
     }
 
-    public Koning getKoningOp(Veld veld)
+    public Stuk getStukOp(Veld veld)
     {
-        Koning result = null;
+        Stuk result = null;
         int i = 0;
-        while (i < this.koningen.size())
+        while (i < this.stukken.size())
         {
-            Koning koning = this.koningen.get(i);
-            if (koning.getVeld().equals(veld))
+            Stuk stuk = this.stukken.get(i);
+            if (stuk.getVeld().equals(veld))
             {
-                result = koning;
+                result = stuk;
             }
             i = i + 1;
         }
         return result;
     }
-
-    public Toren getTorenOp(Veld veld)
-    {
-        Toren result = null;
-        int i = 0;
-        while (i < this.torens.size())
-        {
-            Toren toren = this.torens.get(i);
-            if (toren.getVeld().equals(veld))
-            {
-                result = toren;
-            }
-            i = i + 1;
-        }
-        return result;
-    }
-
 
     public void drukRegelAf(int rij)
     {
         int kolom = 0;
         while (kolom < 8)
         {
-            Koning koning = getKoningOp(new Veld(rij, kolom));
-            if (koning == null)
+            Stuk stuk = getStukOp(new Veld(rij, kolom));
+            if (stuk == null)
             {
-                Toren toren = getTorenOp(new Veld(rij, kolom));
-                if (toren == null)
-                {
-
-                    System.out.print(".");
-
-                } else
-                {
-                    toren.afdrukken();
-                }
+                System.out.print(".");
             } else
             {
-                koning.afdrukken();
+                stuk.afdrukken();
             }
             kolom = kolom + 1;
         }

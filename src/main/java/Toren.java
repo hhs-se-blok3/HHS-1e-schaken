@@ -1,23 +1,12 @@
-public class Toren
+public class Toren extends Stuk
 {
-    private Speler van;
-    private Veld staatOp;
-
-    public Toren(Speler van, Veld staatOp)
+    public Toren(Stelling stelling, Speler van, Veld staatOp)
     {
-        this.van = van;
-        this.staatOp = staatOp;
+        super(stelling, van, staatOp);
     }
 
     public void afdrukken()
     {
-        this.van.afdrukken('R', 'r');
+        this.getVan().afdrukken('R', 'r');
     }
-
-    public Veld getVeld()
-    {
-        return this.staatOp;
-    }
-
-
 }

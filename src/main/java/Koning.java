@@ -1,21 +1,12 @@
-public class Koning
+public class Koning extends Stuk
 {
-    private Speler van;
-    private Veld staatOp;
-
-    public Koning(Speler van, Veld staatOp)
+    public Koning(Stelling stelling, Speler van, Veld staatOp)
     {
-        this.van = van;
-        this.staatOp = staatOp;
+        super(stelling, van, staatOp);
     }
 
     public void afdrukken()
     {
-      this.van.afdrukken('K', 'k');
-    }
-
-    public Veld getVeld()
-    {
-        return this.staatOp;
+        this.getVan().afdrukken('K', 'k');
     }
 }

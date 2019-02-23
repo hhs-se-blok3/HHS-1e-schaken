@@ -5,13 +5,13 @@ public class StellingTest
     @Test
     public void test()
     {
-        Speler speler0 = new Speler(0);
-        Speler speler1 = new Speler(1);
+        Speler speler0 = new Speler("WIT");
+        Speler speler1 = new Speler("ZWART");
         Stelling stelling = new Stelling(speler0);
-        stelling.addKoning(new Koning(speler0, new Veld(1, 2)));
-        stelling.addKoning(new Koning(speler1, new Veld(4, 6)));
-        stelling.addToren(new Toren(speler0, new Veld(2, 5)));
-        stelling.addToren(new Toren(speler1, new Veld(3, 6)));
+        new Koning(stelling, speler0, new Veld(1, 2));
+        new Koning(stelling, speler1, new Veld(4, 6));
+        new Toren(stelling, speler0, new Veld(2, 5));
+        new Toren(stelling, speler1, new Veld(3, 6));
         stelling.afdrukken();
     }
 }
